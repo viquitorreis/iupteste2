@@ -4,8 +4,9 @@ import Controller from './controller.js'
 
 export default class UserRoutes {
     router = new Router()
-    
+
     constructor() {
+        
     }
 
     apiRoute = this.router.get('/', (request, response) => {
@@ -13,7 +14,8 @@ export default class UserRoutes {
     })
     getUsers = this.router.get('/users', Controller.getUsers)
     getUsersById = this.router.get('/users/:id', Controller.getUserById)
-    createUser = this.router.post('/users', Controller.createUser)
+    createUser = this.router.post('/create/users', Controller.createUser)
     updateUser = this.router.put('/users/:id', Controller.updateUser)
     deleteUser = this.router.delete('/users/:id', Controller.deleteUser)
+    
 }

@@ -24,9 +24,9 @@ class Controller {
     }
 
     createUser = (request, response) => {
-        const { name, password } = request.body
+        const { name, email, phone, password } = request.body
 
-        pool.query(Queries.createUser, [name, password], (error, results) => {
+        pool.query(Queries.createUser, [name, email, phone, password], (error, results) => {
             if (error) {
                 throw error
             }
