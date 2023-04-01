@@ -1,0 +1,26 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Nome:</label>
+    <input type="text" formControlName="nome">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email">
+  </div>
+  <div>
+    <label for="password">Senha:</label>
+    <input type="password" formControlName="password">
+  </div>
+  <div>
+    <label for="password">Confirmar senha:</label>
+    <input type="password" formControlName="confirm_password">
+  </div>
+  <div>
+    <label for="password">Celular:</label>
+    <input type="number" formControlName="phone">
+  </div>
+  <div>
+    <button type="submit">Logar</button>
+  </div>
+  <a routerLink="/login">Já tem uma conta?</a>
+</form>

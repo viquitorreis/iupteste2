@@ -14,7 +14,7 @@ export default class UserRoutes {
     })
     getUsers = this.router.get('/users', Controller.getUsers)
     getUsersById = this.router.get('/users/:id', Controller.getUserById)
-    createUser = this.router.post('/create/users', Controller.createUser)
+    createUser = this.router.post('/register', Controller.createUser)
     updateUser = this.router.put('/users/:id', Controller.updateUser)
     deleteUser = this.router.delete('/users/:id', Controller.deleteUser)
     

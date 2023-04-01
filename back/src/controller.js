@@ -1,6 +1,9 @@
 import { pool } from './../db.js'
+import jwt from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
 import Queries from './queries.js'
 
+const jwt_secret = 'iupteste-victorreis'
 class Controller {
 
     getUsers = (request, response) => {
@@ -59,6 +62,13 @@ class Controller {
             }
             response.status(200).send(`User com ID: ${id} foi deletado`)
         })
+    }
+
+    loginUser = (request, response) => {
+        const { email, password } = request.body
+
+
+       
     }
 
 }
