@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private registerService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {
     this.loginForm = formBuilder.group({
       email: [null, Validators.required],
@@ -24,7 +26,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('chamou login')
+    this.loginService.login(this.loginForm.getRawValue())
+    .then(response => {
+      localStorage.setItem('token', response.token)
+      this.router.navigate(['/dashboard'])
+      alert('User logado')
+    }).catch(error => {
+      console.log(error)
+      alert('Erro, olha no console')
+    })
   }
 
 }

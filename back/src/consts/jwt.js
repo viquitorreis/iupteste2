@@ -1,0 +1,3 @@
+const jwt_secret = '71d5e60ba0f0a0254610ed5c7386a471801136eaa8183c1544a5e7ff213dd375'
+
+export default jwt_secret;

@@ -1,7 +1,7 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="email">Nome:</label>
-    <input type="text" formControlName="nome">
+    <input type="text" formControlName="name">
   </div>
   <div>
     <label for="email">Email:</label>
@@ -20,7 +20,7 @@
     <input type="number" formControlName="phone">
   </div>
   <div>
-    <button type="submit">Logar</button>
+    <button type="submit">Criar conta</button>
   </div>
   <a routerLink="/login">Já tem uma conta?</a>
 </form>
